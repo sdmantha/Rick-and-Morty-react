@@ -1,8 +1,14 @@
-import Character from './Character.jsx'
+//need to import css to make visual changes to the document 
 import './App.css'
+//need to import useEffect and useState from react (url for definitions of the useEffect and useState https://medium.com/recraftrelic/usestate-and-useeffect-explained-cdb5dc252baf )
 import { useEffect, useState } from 'react'
+//import nav because in the return we have the nav we want to show up on the screen 
 import Nav from './Nav.jsx'
 
+
+
+
+//Below will be the function to make all of the characters to show up with the pictures and all the information (we need constants for each character, characters (ea. individual) and a description or could do toggle (for the modal toggle to make sure you can select individual characters to pop their description up))
 function App (){
   const [description,setDescription]= useState(false)
   //below, we did a character (with no  's') bc when you call the toggle you want it to only open the one character you want it to open 
@@ -12,7 +18,7 @@ function App (){
   //the useEffect makes a change whenever something new pops up on the page (when your page loads, the content load)
     useEffect(()=> {
       apiCall ()
-      //the closed bracket, makes sure the page fire once and only once. If thres something in there then the thing will fire until whats in the bracket changes
+      //the hard closed bracket, makes sure the page fire once and only once. If thres something in there then the thing will fire until whats in the bracket changes
     }, [])
 
    //this func is just pulling up the json file
@@ -46,33 +52,33 @@ return (
       {/* character.map goes itterates through the array and returns a new array with how you want it */}
     {characters.map((character, index) => (
       // created a key so you dont get the error in the console. The onClick for each character was also added here with the handleclikc
-      <div className= "Character-container" onClick={() => handleClick(character)} key= {index} >
+      <div className= "Character-container" onClick={() => handleClick(character.image)} key= {index} >
         {/* created a new div for the images so when you click on it, it shows up */}
-        <div className= "images">
           {/* this onclick shows the display function in line 20 and each picture has it's own image in the .image */}
-          <img src = {character.image} />
+          <img className="Character-Name" src = {character.image} />
           {/* this will display the name of the character in the api */}
           <h3>{character.name}</h3>
         </div>
+    ))} 
+    </div>
         {/* turnary was created with the pictures  */}
         {description ?
-        <div>
+        <div className='modal'>
           {/* make sure the api doesn't have any other nested key values, arrays, or object and make sure you call it if you want it (these are all seperated to show what information we want displayed, there are more values to add but I only added these*/}
+          <div className='modal-content'>
           <p>Life Status: {character.status}</p>
           <p>Species: {character.species}</p>
           <p>Gender: {character.gender}</p>
          <p>Origin: {character.origin.name}</p>
          <p>Location: {character.location.name}</p>
        </div>
+       </div>
       //  the null is apart of the ternary statement and says if the description isnt activated then the description wont show (if else statement)
-        : null}
+        : null
+        };
       </div>
-    ))}
-    </div>
-  </div>
-);
-
-}
+    );
+};
 
 export default App;
 

@@ -1,4 +1,4 @@
-// import Character from './Character.jsx'
+
 import './App.css'
 import { useEffect, useState } from 'react'
 import Nav from './Nav.jsx'
@@ -45,6 +45,7 @@ function App (){
               )
               }
           </div>
+          
 
 
         {description ?
