@@ -4,7 +4,7 @@
 ## rick and morty api link
 ## https://rickandmortyapi.com/api/character
 ## netlify link
-## 
+## https://63c084daa3f71f7f6a965c4b--jolly-halva-5db9e3.netlify.app/
 
 This project was bootstrapped with [Create React App]
 
