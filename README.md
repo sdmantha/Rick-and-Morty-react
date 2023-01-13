@@ -167,41 +167,41 @@ export default Nav
 ### App.css
 ```js
 
-.App{
-  color:#90d5c4;
-  font-size: 17.99px;
-}
-
+//make sure only the background is this color and when you open the modal the description doesnt have this highlight color behind it
 body {
   background-color: #0e251f;
 }
+
+//moves the pictures over to the left 50px and spaces the pics between eachother
 .Character-container{
   margin-left: 50px;
-  margin-right: 30px
 }
+
+//the words inside of the modal
 .container{
   right: 100px;
   left: 500px;
   color: #95d0c1;
   font-family: 'Great Vibes';
-  
-  
 }
+//moes the name to the center
 h3{
   text-align: center;
 }
+//moves the word characters to the middle
 h2{
   font-size: 40px;
   background-color: aliceblue;
-  border-radius: 98%;
+  border-radius: 15%;
   text-align: center;
 }
 
+//makes sure the images are rounded and not squared
 .image{
   border-radius: 50px;
 }
 
-
+//was created for the grid of the pictures
 .container{
     display: grid; 
     grid-template-columns: 1fr 1fr 1fr 1fr; 
@@ -213,6 +213,8 @@ h2{
       ". . ."; 
 }
 
+
+//made for the screen that pops up with the details 
 .modal {
     position: fixed; /* Stay in place */
     left: 0;
@@ -225,6 +227,7 @@ h2{
     background-color: rgba(0,0,0,0.4); 
 }
 
+//for words inside of the modal and the background color
 .modal-content{
   border-radius: 20%;
   margin-top: 20px;
@@ -243,30 +246,27 @@ h2{
 
 }
 
-
+//rick and morty font size
 .TitleName{
   font-size: 300 cm;
   text-align: center;
   
 }
 
-.Character-container{
-  border-radius: 50px;
-}
 
+//top bar with the title and "characters" title
 Nav{
   background-image: url("./pictures/lmqrkt.jpg");
   
   
-  
+  //for the picture in the nav
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   /* position: relative; */
  
   
-  
-
+// how the logo of rick and morty is
   font-size: 3em;
   border-radius: 10%;
   font-family: 'Get Schwifty';
@@ -275,7 +275,7 @@ Nav{
   -webkit-text-stroke: 1px rgba(0,0,0,0.5);
 }
 
-
+//rick and morty font
 @font-face {
   font-family: 'Get Schwifty';
   src: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/3089507/get-schwifty.woff') format('woff');
